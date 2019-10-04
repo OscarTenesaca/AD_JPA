@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+
+<h:form>
+
+
+<h:dataTable var="_persona" value="#{personaBean.personas}"
+    rendered="#{not empty personaBean.personas}"
+    styleClass="simpletablestyle">
+    <h:column>
+        <f:facet name="header">Cedula</f:facet>
+        #{_persona.cedula}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Nombre</f:facet>
+        #{_persona.nombre}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Email</f:facet>
+        #{_persona.email}
+    </h:column>
+    
+    <h:column>
+        <f:facet name="header">Acciones</f:facet>
+        <h:commandButton action="#{personaBean.borrar(_persona.cedula)}" value="Borrar" />
+        <h:commandButton action="#{personaBean.editar(_persona)}" value="Editar" />
+    </h:column>
+    
+    <f:facet name="footer">
+    	<h:commandButton action="create-persona" value="Crear persona" />
+    </f:facet>
+</h:dataTable>
+
+
+</h:form>
+
+
+</body> 
+</html>

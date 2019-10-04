@@ -1,0 +1,11 @@
+ec\edu\ups\appdis\jpa\model\Persona.class
+ec\edu\ups\appdis\jpa\bussiness\PersonaBussiness.class
+ec\edu\ups\appdis\jpa\serviceSOAP\PersonaSOAPService.class
+ec\edu\ups\appdis\testjpa\services\PersonasServiceRest.class
+ec\edu\ups\appdis\testjpa\services\RestApplication.class
+ec\edu\ups\appdis\jpa\util\Resources.class
+ec\edu\ups\appdis\jpa\model\Telefono.class
+ec\edu\ups\appdis\jpa\dao\PersonaDAO.class
+ec\edu\ups\appdis\jpa\model\Telefono_.class
+ec\edu\ups\appdis\jpa\view\PersonaBean.class
+ec\edu\ups\appdis\jpa\model\Persona_.class

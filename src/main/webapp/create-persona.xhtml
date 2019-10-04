@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+<h:form>
+	<h:panelGrid columns="3">
+		<h:outputLabel value="Cedula" />
+		<h:inputText value="#{personaBean.newPersona.cedula}" id="txtcedula" />
+		<h:message for="txtcedula" />
+	
+		<h:outputLabel value="Nombre" />
+		<h:inputText value="#{personaBean.newPersona.nombre}" id="txtnombre"/>
+		<h:message for="txtnombre" />
+		
+		<h:outputLabel value="Email" />
+		<h:inputText value="#{personaBean.newPersona.email}" id="txtemail" />
+		<h:message for="txtemail" />
+				
+		<h:inputHidden value="#{personaBean.edit}" />
+		<h:commandButton action="#{personaBean.guardar()}" value="Guardar" />
+	
+	</h:panelGrid>
+	
+	<h:dataTable var="_telefono" value="#{personaBean.newPersona.telefonos}"
+	    >
+	    <h:column>
+	        <f:facet name="header">Numero</f:facet>
+	        <h:inputText value="#{_telefono.numero}" />
+	    </h:column>
+	    <h:column>
+	        <f:facet name="header">Tipo</f:facet>
+	        <h:inputText value="#{_telefono.tipo}" />
+	    </h:column>
+	    
+	    <f:facet name="footer">
+	    	<h:commandButton action="#{personaBean.addTelefono()}"
+	    	 value="Agregar telefono" >
+	    	 		<f:ajax event="click" render="@form"/>
+	    	 </h:commandButton>
+	    </f:facet>
+	</h:dataTable>
+	
+	
+	<h:messages globalOnly="true"/>
+
+</h:form>
+
+
+</body> 
+</html>
